@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Activity.Setting_Activity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <ImageView
+            android:id="@+id/appimage"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:src="@mipmap/ic_launcher" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textStyle="italic"
+                android:textColor="@color/colorPrimary"
+                android:layout_centerInParent="true"
+                android:text="Nissar Store" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/resetlinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:padding="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appimage">
+
+            <LinearLayout
+                android:id="@+id/aboutus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="2dp"
+                android:padding="10dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_launcher_background"/>
+                <TextView
+                    android:id="@+id/about_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:paddingStart="15dp"
+                    android:text="@string/about_us"
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@android:color/black"
+                    android:textSize="21sp" />
+            </LinearLayout>
+            <!--        <LinearLayout-->
+            <!--            android:layout_width="match_parent"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:clickable="true"-->
+            <!--            android:focusable="true"-->
+            <!--            android:padding="10dp"-->
+            <!--            android:layout_marginBottom="15dp"-->
+            <!--            android:layout_marginStart="10dp"-->
+            <!--            android:layout_marginEnd="10dp"-->
+            <!--            android:foreground="?android:attr/selectableItemBackground">-->
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/dark_txt"-->
+            <!--                android:layout_width="270dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="2dp"-->
+            <!--                android:layout_marginBottom="2dp"-->
+            <!--                android:paddingStart="15dp"-->
+            <!--                android:text="@string/dark_mode"-->
+            <!--                android:layout_gravity="center_vertical"-->
+            <!--                android:textColor="@android:color/black"-->
+            <!--                android:textSize="21sp" />-->
+            <!--            <Switch-->
+            <!--                android:id="@+id/darkswitch"-->
+            <!--                android:layout_width="50dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:onClick="darkmode"/>-->
+            <!--        </LinearLayout>-->
+
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/versionid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Version 1.0"
+            android:gravity="center"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
