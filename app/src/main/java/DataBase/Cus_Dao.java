@@ -27,12 +27,12 @@ public interface Cus_Dao {
     @Update
     void update(Customer_db customer_db);
 
-    @Query("SELECT * FROM Customer_db WHERE mobile=mob")
+    @Query("SELECT * FROM Customer_db WHERE mobile=:st")
     List<Customer_db>getupdate(String st);
 
     @Query("UPDATE Customer_db SET name=:nam,place=:plac,total=:tot,amobile=:amob WHERE mobile=:mob")
-    void updateval(String nam,String plac,String tot,String amob);
+    void updateval(String nam,String plac,String tot,String amob,String mob);
 
-    @Query("DELETE FROM Customer_db WHERE mobile=mob ")
+    @Query("DELETE FROM Customer_db WHERE mobile=:mob")
     void deleteval(String mob);
 }

@@ -1,10 +1,11 @@
 package DataBase;
 
 import androidx.room.ColumnInfo;
+import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.util.jar.Attributes;
-
+@Entity
 public class Customer_db {
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -18,7 +19,7 @@ public class Customer_db {
     @ColumnInfo(name = "mobile")
     private String mobile;
 
-    @ColumnInfo(name = "mobile")
+    @ColumnInfo(name = "amobile")
     private String amobile;
 
     @ColumnInfo(name = "date")

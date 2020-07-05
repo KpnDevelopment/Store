@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="Adapter.Adapter_Activity">
+    tools:context="Adapter.Activity_Adapter">
     <LinearLayout
         android:background="@android:color/white"
         android:id="@+id/userlog"
@@ -75,14 +75,14 @@
                         android:text="@string/total"
                         android:textColor="@android:color/black"
                         android:textSize="20sp" />
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="2dp"-->
-<!--                        android:layout_marginBottom="2dp"-->
-<!--                        android:text="@string/state"-->
-<!--                        android:textColor="@android:color/black"-->
-<!--                        android:textSize="20sp" />-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="@string/mobile"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -138,15 +138,15 @@
                         android:text="@string/total"
                         android:textColor="@android:color/black"
                         android:textSize="20sp" />
-<!--                    <TextView-->
-<!--                        android:id="@+id/sta_txt"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginTop="2dp"-->
-<!--                        android:layout_marginBottom="2dp"-->
-<!--                        android:text="@string/state"-->
-<!--                        android:textColor="@android:color/black"-->
-<!--                        android:textSize="20sp" />-->
+                    <TextView
+                        android:id="@+id/admob_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="@string/mobile"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
 
 
                 </LinearLayout>
