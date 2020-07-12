@@ -4,40 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Activity.Update_Activity">
+    tools:context="activity.Update_Activity">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:id="@+id/linear1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="parent">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/update"
-                android:textSize="25sp"
-                android:layout_marginStart="10dp"
-                android:gravity="center_vertical"
-                android:textColor="@android:color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-        </LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linear1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/colorPrimary"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toStartOf="parent">-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/update"-->
+<!--                android:textSize="25sp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:textColor="@android:color/white"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"/>-->
+<!--        </LinearLayout>-->
         <LinearLayout
             android:id="@+id/linear2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="80dp"
             android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/linear1">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <LinearLayout
                 android:id="@+id/upName"
@@ -134,7 +137,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/enter_the_mobile"
                     android:singleLine="true"
-                    android:inputType="textCapSentences"
+                    android:inputType="number"
                     android:textColor="@android:color/black"
                     android:textColorHint="@color/colorhint"
                     android:padding="5dp"

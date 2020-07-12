@@ -5,41 +5,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="Activity.Inserting_Activity">
+    tools:context="activity.Inserting_Activity">
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content">
-    <LinearLayout
-        android:id="@+id/linear1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="parent">
-      <TextView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="@string/insert"
-          android:textSize="25sp"
-          android:layout_marginStart="10dp"
-          android:gravity="center_vertical"
-          android:textColor="@android:color/white"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintTop_toTopOf="parent"/>
-    </LinearLayout>
+      android:layout_height="wrap_content"
+      android:layout_marginTop="70dp"
+      android:id="@+id/cons">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linear1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/colorPrimary"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="parent">-->
+<!--      <TextView-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="wrap_content"-->
+<!--          android:text="@string/insert"-->
+<!--          android:textSize="25sp"-->
+<!--          android:layout_marginStart="10dp"-->
+<!--          android:gravity="center_vertical"-->
+<!--          android:textColor="@android:color/white"-->
+<!--          app:layout_constraintStart_toStartOf="parent"-->
+<!--          app:layout_constraintEnd_toEndOf="parent"-->
+<!--          app:layout_constraintTop_toTopOf="parent"/>-->
+<!--    </LinearLayout>-->
     <LinearLayout
         android:id="@+id/linear2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginTop="80dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/linear1">
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
       <LinearLayout
           android:id="@+id/inName"
@@ -136,7 +139,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_the_mobile"
             android:singleLine="true"
-            android:inputType="textCapSentences"
+            android:inputType="number"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorhint"
             android:padding="5dp"
@@ -170,7 +173,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_the_mobile"
             android:singleLine="true"
-            android:inputType="textCapSentences"
+            android:inputType="number"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorhint"
             android:padding="5dp"
@@ -189,7 +192,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:layout_weight="1.4"
+            android:layout_weight="1"
             android:textSize="20sp"
             android:text="@string/total"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -204,7 +207,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_the_total_amount"
             android:singleLine="true"
-            android:inputType="textCapSentences"
+            android:inputType="number"
             android:textColor="@android:color/black"
             android:textColorHint="@color/colorhint"
             android:padding="5dp"

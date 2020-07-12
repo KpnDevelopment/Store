@@ -1,13 +1,14 @@
-package Adapter;
+package adapter;
 
 import android.content.Context;
-import android.text.Layout;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,21 +19,23 @@ import com.example.Activity.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import DataBase.Customer_db;
+import dataBase.Customer_db;
 
-public class Activity_Adapter extends RecyclerView.Adapter<Activity_Adapter.Holder>implements Filterable {
+public class Activity_Adapter extends RecyclerView.Adapter<Activity_Adapter.Holder> implements Filterable{
     LayoutInflater inflater;
     Context context;
+    private static StartActivity clickerlistener;
     List<Customer_db> customer_dbs;
     List<Customer_db>customerModelList;
-    LinearLayout longbtn;
 
 
 
-    public Activity_Adapter(Context context,List<Customer_db>customer_dbs){
+    public Activity_Adapter(Context context,List<Customer_db>customer_dbs,StartActivity listener){
         this.context=context;
         this.customer_dbs=customer_dbs;
         this.customerModelList=customer_dbs;
+        clickerlistener=listener;
+
     }
 
     @Override
@@ -83,8 +86,8 @@ public class Activity_Adapter extends RecyclerView.Adapter<Activity_Adapter.Hold
         if (customer_dbs!=null){
             Customer_db customer_db=customer_dbs.get(position);
             holder.name.setText(customer_db.getName());
-            holder.mobile.setText(customer_db.getMobile());
             holder.total.setText(customer_db.getTotal());
+            holder.mobile.setText(customer_db.getMobile());
         }
 
     }
@@ -106,15 +109,62 @@ public class Activity_Adapter extends RecyclerView.Adapter<Activity_Adapter.Hold
         notifyDataSetChanged();
     }
 
+//    @Override
+//    public void onClick(View v) {
+//        PopupMenu popupMenu;
+//        popupMenu = new PopupMenu(.this,longbtn);
+//        popupMenu.getMenuInflater().inflate(R.menu.acbar_menu,popupMenu.getMenu());
+//        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                Intent intent;
+//                switch (){
+//                    case 0:
+//                        intent =  new Intent(context, Update_Activity.class);
+//                        break;
+//
+//                    case 1:
+//                        intent =  new Intent(context, History_Activity.class);
+//                        break;
+//                    case 2:
+//
+//                        intent =  new Intent(context, AddMoney_Activity.class);
+//                        break;
+//                };
+//            }
+//        });
+//
+//    }
+
     public class Holder extends RecyclerView.ViewHolder {
         public TextView name,total,mobile;
         public Holder(@NonNull View itemView) {
             super(itemView);
+            LinearLayout longbtn;
+
             name=itemView.findViewById(R.id.adname_txt);
             total=itemView.findViewById(R.id.adtotal_txt);
             mobile=itemView.findViewById(R.id.admob_txt);
+            itemView.setClickable(true);
+            longbtn=itemView.findViewById(R.id.userlog);
+            longbtn.setOnLongClickListener(v -> {
+                PopupMenu popupMenu = new PopupMenu(context,longbtn);
+                popupMenu.getMenuInflater().inflate(R.menu.long_menu,popupMenu.getMenu());
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        clickerlistener.clickstart(item.getTitle().toString());
+                        return false;
+                    }
+                });
+                popupMenu.show();
+                return true;
+            });
 
         }
 
+    }
+    public interface StartActivity  {
+        void clickstart(String optionMenu);
     }
 }

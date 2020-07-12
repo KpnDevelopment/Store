@@ -1,23 +1,14 @@
-package Activity;
+package activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.MenuItemCompat;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.SearchView;
 
 import com.example.Activity.R;
 
@@ -26,9 +17,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import Adapter.Activity_Adapter;
-import DataBase.Cus_Viewmodel;
-import DataBase.Customer_db;
+import adapter.Activity_Adapter;
+import dataBase.Cus_Viewmodel;
+import dataBase.Customer_db;
 
 public class Inserting_Activity extends AppCompatActivity {
     Button subbtn;
@@ -37,6 +28,7 @@ public class Inserting_Activity extends AppCompatActivity {
     EditText mobile;
     EditText amobile;
     EditText total;
+    String admoney;
     RecyclerView recyclerView;
     Activity_Adapter activity_adapter;
     Cus_Viewmodel cus_viewmodel;
@@ -79,21 +71,24 @@ public class Inserting_Activity extends AppCompatActivity {
         else {
             final String sname=name.getText().toString().trim();
             final String splace=place.getText().toString().trim();
-            final String stotal=total.getText().toString().trim();
-            final String samobile=amobile.getText().toString().trim();
             final String smobile=mobile.getText().toString().trim();
+            final String samobile=amobile.getText().toString().trim();
+            final String stotal=total.getText().toString().trim();
 
 
-            Customer_db customer_db=new Customer_db(sname,splace,stotal,samobile,smobile);
+
+
+
+            Customer_db customer_db=new Customer_db(sname,splace,smobile,samobile,stotal);
             cus_viewmodel.insert(customer_db);
         }
     }
     public void clear(){
         name.setText(null);
         place.setText(null);
-        total.setText(null);
-        amobile.setText(null);
         mobile.setText(null);
+        amobile.setText(null);
+        total.setText(null);
 
     }
     void datepic(){
